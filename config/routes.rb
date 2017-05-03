@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   root 'homepages#index'
 
+  get 'homepages', to: 'homepages#index'
+  get 'recipes', to: 'recipes#index', as: 'search_recipe'
+  get 'recipes/:uri', to: 'recipes#show', as: 'recipe'
 end
