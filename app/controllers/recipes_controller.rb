@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
   def show
     #@recipe_uri = params[:uri]
     @recipe = EdamamApiWrapper.getRecipe(params[:uri])
-    
+  
   end
 
 end
