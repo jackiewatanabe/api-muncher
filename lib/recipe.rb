@@ -3,13 +3,13 @@ class Recipe
 
   def initialize(label, uri, options = {})
     @label = label
-    @uri = uri
+    @uri = URI.escape(uri)
 
 
-    @image = options[:image]
-    @source = options[:source]
-    @ingredients = options[:ingredients]
-    @url = options[:url]
+    @image = options["image"]
+    @source = options["source"]
+    @ingredients = options["ingredients"]
+    @url = options["url"]
 
   end
 
