@@ -1,3 +1,4 @@
+require 'EdamamApiWrapper'
 
 class RecipesController < ApplicationController
 
