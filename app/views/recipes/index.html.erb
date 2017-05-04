@@ -3,9 +3,16 @@
 <h2>Recipe results</h2>
 
 <ul>
-  <% @recipes.each do |recipe| %>
+  <% @recipes[0..10].each do |recipe| %>
   <li>
     <img src="<%=recipe.image%>" alt="<%=recipe.label%>" ><%= link_to recipe.label, recipe_path(:name => recipe.label, :uri => recipe.uri) %>
   </li>
   <% end %>
 </ul>
+
+<p>
+<% if @recipes.length > 10 %>
+  <% params[:page] = (params[:page].to_i + 1).to_s %>
+  <%= link_to "next page", search_recipe_path(params[:page]) %>
+<% end %>
+</p>
