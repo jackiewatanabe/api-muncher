@@ -1,4 +1,4 @@
-require './lib/edamam_api_wrapper'
+require_relative './lib/edamam_api_wrapper'
 
 class RecipesController < ApplicationController
 

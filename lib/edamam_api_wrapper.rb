@@ -23,7 +23,7 @@ class EdamamApiWrapper
         options["ingredients"] = recipe["recipe"]["ingredients"]
         #raise
         recipes << Recipe.new(label, uri, options)
-  end
+      end
     end
     #raise
     return recipes
