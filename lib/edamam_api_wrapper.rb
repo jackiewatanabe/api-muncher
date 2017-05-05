@@ -42,11 +42,12 @@ class EdamamApiWrapper
         options["url"] = response[0]["url"]
         options["source"] = response[0]["source"]
         options["ingredients"] = response[0]["ingredients"]
+        options["diet_labels"] = response[0]["dietLabels"]
       recipe = Recipe.new(label, uri, options)
     else
       return nil
     end
-    # raise
+    #raise
     return recipe
   end
 end

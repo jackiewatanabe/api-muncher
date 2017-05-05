@@ -16,6 +16,20 @@
   </ul>
 </p>
 
+<% if @recipe.diet_labels != [] %>
+<p>
+  Diet Labels:
+  <ul>
+
+      <% @recipe.diet_labels.each do |label| %>
+      <li>
+        <%= label %>
+      </li>
+      <% end %>
+  </ul>
+</p>
+<% end %>
+
 <p>
   Source: <%= @recipe.source %>
 </p>
