@@ -1,13 +1,14 @@
-<h1>Recipes Index page</h1>
-
-<h2>Recipe results for "<%= params[:search_term] %>"</h2>
-
-<ul>
+<h3>Recipe options for '<%= params[:search_term] %>'</h3>
+<article class="row small-up-2 medium-up-3 large-up-5">
   <% @recipes.each do |recipe| %>
-  <li>
-    <img src="<%=recipe.image%>" alt="<%=recipe.label%>" ><%= link_to recipe.label, recipe_path(:name => recipe.label, :uri => recipe.uri) %>
-  </li>
-  <% end %>
-</ul>
+  <section class="column">
+    <img src="<%=recipe.image%>" alt="<%=recipe.label%>" ><%= link_to recipe.label, recipe_path(:label => recipe.label, :uri => recipe.uri) %>
 
+  </section>
+
+  <% end %>
+
+
+
+</article>
 <%= will_paginate @recipes, class: "row" %>

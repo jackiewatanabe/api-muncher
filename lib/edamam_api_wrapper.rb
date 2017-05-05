@@ -1,4 +1,5 @@
 require 'httparty'
+require 'uri'
 
 class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/"
@@ -30,9 +31,9 @@ class EdamamApiWrapper
   end
 
   def self.getRecipe(uri)
-    url = BASE_URL + "search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&r=#{uri}"
+    url = BASE_URL + "search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&r=#{ URI.encode(uri) }"
 
-    response = HTTParty.get(url).parsed_response
+    response = HTTParty.get(url)#.parsed_response
 
     if response != nil
       label = response[0]["label"]
