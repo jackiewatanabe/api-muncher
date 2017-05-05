@@ -1,13 +1,11 @@
-<h1>Recipes Index page</h1>
+<h2>Nummy recipe results for '<%= params[:search_term] %>'</h2>
 
-<h2>Recipe results for "<%= params[:search_term] %>"</h2>
+<article class="row small-up-3 medium-up-5">
 
-<ul>
   <% @recipes.each do |recipe| %>
-  <li>
+  <section class="column">
     <img src="<%=recipe.image%>" alt="<%=recipe.label%>" ><%= link_to recipe.label, recipe_path(:label => recipe.label, :uri => recipe.uri) %>
-  </li>
+  </section>
   <% end %>
-</ul>
-
+</article>
 <%= will_paginate @recipes, class: "row" %>
