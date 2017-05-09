@@ -1,6 +1,6 @@
-<h2>Nummy recipe results for '<%= params[:search_term] %>'</h2>
+<h3>Nummy recipe results for '<%= params[:search_term] %>'</h3>
 
-<article class="row small-up-3 medium-up-5">
+<article class="row small-up-3 medium-up-3 large-up-4">
 
   <% @recipes.each do |recipe| %>
   <section class="column">
@@ -8,4 +8,4 @@
   </section>
   <% end %>
 </article>
-<%= will_paginate @recipes, class: "row" %>
+<%= will_paginate @recipes, class: "page-nav row" %>

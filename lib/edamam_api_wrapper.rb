@@ -7,7 +7,7 @@ class EdamamApiWrapper
 
   def self.search(search_term)
     #raise
-    url = BASE_URL + "search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&q=#{search_term}" + "&to=30"
+    url = BASE_URL + "search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&q=#{search_term}" + "&to=1000"
 
     response = HTTParty.get(url).parsed_response
 
@@ -33,7 +33,7 @@ class EdamamApiWrapper
     url = BASE_URL + "search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&r=#{uri}"
 
     response = HTTParty.get(url).parsed_response
-
+    #raise
     if response != nil
       label = response[0]["label"]
       uri = response[0]["uri"]
@@ -43,6 +43,8 @@ class EdamamApiWrapper
         options["source"] = response[0]["source"]
         options["ingredients"] = response[0]["ingredients"]
         options["diet_labels"] = response[0]["dietLabels"]
+        options["total_nutrients"] = response[0]["totalNutrients"]
+        options["calories"] = response[0]["calories"]
       recipe = Recipe.new(label, uri, options)
     else
       return nil
