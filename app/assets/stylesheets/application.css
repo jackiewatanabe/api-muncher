@@ -109,6 +109,7 @@ article {
 
 .button {
   background-color: #A9C52F;
+  text-transform: uppercase;
 }
 
 .button:hover {
