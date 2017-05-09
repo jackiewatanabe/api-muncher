@@ -1,14 +1,14 @@
 <article class="recipe">
   <div>
 
-  <section class="small-4 small-centered columns">
+  <section class="small-8 medium-4 small-centered columns">
     <h3><%= @recipe.label %></h3>
   </section>
-  <section class="small-4 small-centered columns">
+  <section class="small-8 medium-4 small-centered columns">
     <img src="<%= @recipe.image %>" alt="<%= @recipe.label %>" >
   </section>
 
-  <section class="small-4 small-centered columns">
+  <section class="small-8 medium-4 small-centered columns">
     <h4>Ingredients</h4>
 
       <ul>
@@ -22,7 +22,7 @@
       </ul>
 
   </section>
-  <section class="small-4 small-centered columns">
+  <section class="small-8 medium-4 small-centered columns">
 
     <% if @recipe.diet_labels != [] %>
 
@@ -38,7 +38,7 @@
     <% end %>
 
   </section>
-  <section class="small-4 small-centered columns">
+  <section class="small-8 medium-4 small-centered columns">
     <h4>Nutrition Information</h4>
     <table>
       <tr>
@@ -117,7 +117,7 @@
       </tr>
     </table>
   </section>
-  <section class="small-4 small-centered columns">
+  <section class="small-8 medium-4 small-centered columns">
     <p>
       See the original recipe from <%= link_to "#{@recipe.source}", @recipe.url, target: "_blank" %>
     </p>
